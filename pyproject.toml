@@ -1,0 +1,45 @@
+[project]
+name = "reminder-ai"
+version = "0.1.0"
+description = "The Reminder AI monorepo."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = ["celery-types>=0.26.0"]
+
+[tool.uv.workspace]
+members = ["packages/db", "apps/backend", "apps/worker"]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.uv.sources]
+db = { workspace = true }
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+exclude = ["**/alembic/versions/**"]
+
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["ANN"] # no annotation requirements in tests
+"**/tests/**" = [
+    "ANN",
+] # also covers nested test directories (e.g. apps/trading/tests)
+"packages/db/**" = [
+    "RUF012",
+    "B006",
+] # SQLAlchemy models use mutable defaults (e.g. mapped_column)
+"packages/db/alembic/versions/**" = ["E501"] # SQL statements exceed 100 chars
+"packages/db/alembic/sandbox_versions/**" = [
+    "E501",
+] # SQL statements exceed 100 chars

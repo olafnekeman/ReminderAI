@@ -1,0 +1,27 @@
+{
+  "include": ["packages/*/src", "apps/*/src"],
+  "exclude": ["apps/web/*"],
+  "extraPaths": [
+    "apps/backend/src",
+    "apps/trading/src",
+    "apps/db_sync/src",
+    "apps/ems/src",
+    "packages/db/src",
+    "packages/battery/src",
+    "packages/time_utils/src",
+    "packages/solar/src",
+    "packages/security/src",
+    "packages/config/src",
+    "packages/usage/src",
+    "packages/market_data/src",
+    "packages/integrations/src",
+    "packages/patterns/src",
+    "packages/weather/src",
+    "packages/connect/src",
+    "packages/notifications/src",
+    "packages/eabo/src",
+    "packages/geo/src"
+  ],
+  "venvPath": ".",
+  "venv": ".venv"
+}
