@@ -10,7 +10,12 @@ dependencies = []
 dev = ["celery-types>=0.26.0"]
 
 [tool.uv.workspace]
-members = ["packages/db", "apps/backend", "apps/worker"]
+members = [
+    "packages/db",
+    "apps/backend",
+    "apps/worker",
+    "apps/dashboard",
+]
 
 [tool.uv]
 default-groups = ["dev"]

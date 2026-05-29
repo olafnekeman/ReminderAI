@@ -1,0 +1,25 @@
+[project]
+name = "dashboard"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "Olaf Nekeman", email = "olaf@kwiekenergie.nl" }]
+requires-python = ">=3.12"
+dependencies = [
+    "backend",
+    "httpx>=0.28.1",
+    "pandas>=3.0.3",
+    "plotly>=6.7.0",
+    "streamlit>=1.58.0",
+]
+
+[project.scripts]
+dashboard = "dashboard:main"
+dashboard-dev = "dashboard:dev"
+
+[build-system]
+requires = ["uv_build>=0.10.0,<0.11.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+backend = { workspace = true }
