@@ -70,8 +70,8 @@ dev-flower:
     uv run --package backend celery -A backend.jobs.celery flower &
     open http://localhost:5555
 
-dev-my-kwiek:
-    pnpm --filter my-kwiek dev
+dev-web:
+    pnpm --filter reminder-ai dev
 
 # ---------------------------------------------------------------------------
 # DB
